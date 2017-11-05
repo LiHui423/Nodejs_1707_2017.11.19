@@ -8,10 +8,10 @@ for (let key of buff1.keys()) {
     console.log(`${key} - ${buff1[key]}`);
 }
 
-for (let pair of buff1.entries()) { // entry
-    console.log(pair);
-}
-
 for (let value of buff1.values()) {
     console.log(value);
+}
+
+for (let pair of buff1.entries()) { // entry
+    console.log(pair);
 }
