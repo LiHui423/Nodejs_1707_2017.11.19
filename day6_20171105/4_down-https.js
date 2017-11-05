@@ -1,12 +1,11 @@
-const http = require('http');
+const https = require('https');
 const fs = require('fs');
 
 let options = {
-    host: 'img.jandan.net',
-    path: '/news/2017/09/cf114fae2a31b13bac5a13c5bce745df.jpg',
-    headers: {'User-Agent':'Mozilla/5.0'}
+    host: 'nodejs.org',
+    path: '/static/images/logo.svg'
 };
-let request = http.request(options, (res) => {
+let request = https.request(options, (res) => {
     console.log(res.statusCode);
     let data = '';
     res.setEncoding('binary');
@@ -14,7 +13,7 @@ let request = http.request(options, (res) => {
         data += buffer;
 });
     res.on('end', () => {
-        fs.writeFile(__dirname + '/jiandan.jpg', data, 'binary', (err) => {
+        fs.writeFile(__dirname + '/nodejs.svg', data, 'binary', (err) => {
             if (err) throw err;
             console.log("downloaded...");
         })
