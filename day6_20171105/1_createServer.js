@@ -10,7 +10,7 @@ server.on('request', (req, res) => {
 
     res.writeHead(200, 'OK', {'Content-Type':'text/html;charset=UTF-8'});
     res.write('test');
-    res.write('测试');
+    res.end('测试');
 });
 
-server.listen('81');
+server.listen('80');
