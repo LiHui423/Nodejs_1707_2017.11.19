@@ -8,15 +8,22 @@
  */
 
 const express = require('express');
+const bodyParser = require('body-parser');
 
 let app = express();
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
 app.get('/', (req, res) => { // get post put delete
     res.sendFile(__dirname + '/public/index.html');
 });
 
 app.post('/signIn', (req, res) => {
-    res.send('sign in...');
+    let username = req.body.username;
+    let password = req.body.password;
+    res.send(username + ':' + password);
 });
 
 app.listen(80);
