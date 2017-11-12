@@ -36,9 +36,9 @@ app.post('/signUp', (req, res) => {
         connection.query('INSERT INTO db_demo.user VALUE(NULL, ?, ?)', [username, password], (err, results, fields) => {
             console.log(results.affectedRows);
             if (results.affectedRows === 1) {
-
+                res.sendFile(__dirname + '/public/index.html');
             } else {
-
+                res.sendFile(__dirname + '/public/sign-up.html');
             }
             connection.release();
         })
@@ -53,9 +53,9 @@ app.post('/signIn', (req, res) => {
         connection.query('SELECT * FROM db_demo.user WHERE username = ? AND password = ?', [username, password], (err, results, fields) => {
             console.log(results.length)
             if (results.length === 1) {
-
+                res.sendFile(__dirname + '/public/home.html');
             } else {
-
+                res.sendFile(__dirname + '/public/index.html');
             }
             connection.release();
         })
