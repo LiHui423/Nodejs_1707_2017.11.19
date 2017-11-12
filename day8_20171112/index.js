@@ -15,4 +15,8 @@ app.get('/', (req, res) => { // get post put delete
     res.sendFile(__dirname + '/public/index.html');
 });
 
+app.post('/signIn', (req, res) => {
+    res.send('sign in...');
+});
+
 app.listen(80);
