@@ -31,12 +31,28 @@ app.get('/sign-up', (req, res) => { // get post put delete
 app.post('/signUp', (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
-    res.send(username + ':' + password);
     pool.getConnection((err, connection) => {
         if(err) throw err;
         connection.query('INSERT INTO db_demo.user VALUE(NULL, ?, ?)', [username, password], (err, results, fields) => {
             console.log(results.affectedRows);
-            if (results.affectedRows == 1) {
+            if (results.affectedRows === 1) {
+
+            } else {
+
+            }
+            connection.release();
+        })
+    })
+});
+
+app.post('/signIn', (req, res) => {
+    let username = req.body.username;
+    let password = req.body.password;
+    pool.getConnection((err, connection) => {
+        if(err) throw err;
+        connection.query('SELECT * FROM db_demo.user WHERE username = ? AND password = ?', [username, password], (err, results, fields) => {
+            console.log(results.length)
+            if (results.length === 1) {
 
             } else {
 
