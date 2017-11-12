@@ -12,7 +12,7 @@ const express = require('express');
 let app = express();
 
 app.get('/', (req, res) => { // get post put delete
-    res.send('Hello, Express.');
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 app.listen(80);
