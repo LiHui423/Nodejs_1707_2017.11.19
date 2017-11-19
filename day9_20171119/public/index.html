@@ -15,7 +15,12 @@
                         password: $('[type=password]').val()
                     },
                     success: function (data) {
-                        console.log(data);
+                        if (data.status === 'OK') {
+                            console.log(data.status);
+                            window.location.href = 'home.html';
+                        } else {
+                            window.location.href = 'index.html';
+                        }
                     },
                     error: function (a, b, c) {
                         console.log(a);

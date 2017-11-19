@@ -37,15 +37,8 @@
 26. 注册时判断用户名是否存在，如果存在，不允许注册，不存在，可以注册
 27. 普通静态链接的跳转：app.use(express.static(__dirname + '/public'));
 28. 把登录请求改成 AJAX 方式
-	28.1 修改页面 index.html，添加 AJAX 请求提交
-	28.2 后台处理这个请求
-
-
-
-
-
-
-
-
-
-
+	28.1 引用 jQuery
+	28.2 修改页面 index.html，添加 AJAX 请求提交
+	28.3 后台处理这个请求
+	28.4 返回 JSON 数据，方法为 res.send(jsonData);
+	28.5 jsonData 回到了 index.html 的 AJAX 请求的 success 回调函数的参数，根据结果进行页面的跳转 window.location.href = 'xxx.html';

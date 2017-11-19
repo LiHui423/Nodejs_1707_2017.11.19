@@ -67,11 +67,11 @@ app.post('/signIn', (req, res) => {
         let sql = 'SELECT * FROM db_demo.user WHERE username = ? AND password = ?'; // Alt + Shift + U
         connection.query(sql, [username, password], (err, results, fields) => {
             if (err) throw err;
+            let jsonData = {"status": "ERR"};
             if (results.length === 1) {
-                res.sendFile(__dirname + '/public/home.html');
-            } else {
-                res.sendFile(__dirname + '/public/index.html');
+                jsonData = {"status": "OK"};
             }
+            res.send(jsonData);
         });
         connection.release();
     })
