@@ -13,7 +13,8 @@ let app = express(); // 创建 express 对象
 
 app.get('/', (req, res) => { // 接受服务器的根目录 GET 请求
    console.log('/...'); // 控制台输出信息
-   res.end('end...'); // res:response end 方法在网页上输出字符串，同时结束了这次响应
+   // res.end('end...'); // res:response end 方法在网页上输出字符串，同时结束了这次响应
+    res.sendFile(__dirname + '/public/index.html');
 });
 
 app.listen(80); // 监听 80 端口，80 是 http 协议的默认端口
