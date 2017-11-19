@@ -16,8 +16,9 @@
 11. 链接跳转改为 href="/sign-up"
 12. 链接跳转的请求处理: app.get('/sign-up',(req, res)=>{//...}); 跳转到了 public/sign-up.html 页面
 13. 安装全局 package，cmd: cnpm install -g supervisor，作用是热部署
-14. 停止原来的服务，在项目 index.js 所在目录处，执行命令 cmd: supervisor index.js 
-
+14. 停止原来的服务，在项目 index.js 所在目录处，执行命令 cmd: supervisor index.js
+15. 用户发出注册请求，<form action="/signUp" method="post">
+16. 修改 index.js 文件，添加对 /signUP 请求的接受 app.post('/signUp', ()=>{});
 
 
 

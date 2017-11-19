@@ -21,4 +21,8 @@ app.get('/sign-up', (req, res) => { // 来自于链接的请求
     res.sendFile(__dirname + '/public/sign-up.html');
 }); // 更好的处理
 
+app.post('/signUp', (req, res) => { // 接受用户注册请求
+    console.log('sign up...');
+});
+
 app.listen(80); // 监听 80 端口，80 是 http 协议的默认端口
