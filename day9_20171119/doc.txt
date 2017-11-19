@@ -12,6 +12,9 @@
   8.1 用户登录的表单
   8.2 用户注册的链接
 9. 修改 index.js 处理网站的根目录请求，返回响应是页面跳转到网站首页-登录页面 public/index.html
+10. 创建文件: public/sign-up.html，有一个用户注册的表单
+11. 链接跳转改为 href="/sign-up"
+12. 链接跳转的请求处理: app.get('/sign-up',(req, res)=>{//...}); 跳转到了 public/sign-up.html 页面
 
 
 

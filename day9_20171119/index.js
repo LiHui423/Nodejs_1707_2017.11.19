@@ -17,4 +17,8 @@ app.get('/', (req, res) => { // 接受服务器的根目录 GET 请求
     res.sendFile(__dirname + '/public/index.html');
 });
 
+app.get('/sign-up', (req, res) => {
+    res.sendFile(__dirname + '/public/sign-up.html');
+});
+
 app.listen(80); // 监听 80 端口，80 是 http 协议的默认端口
