@@ -3,3 +3,6 @@
 3. day9 目录下执行 cmd: npm init 创建项目的配置文件 package.json
   3.1 进入 day9 目录，按 shift 键，鼠标右键，选“在此处打开命令窗口”
   3.2 在 Webstorm 里，按 Alt + F12 进入终端
+4. 创建文件 day9/index.js
+5. 安装 package：mysql、express，项目目录下执行命令 cmd: cnpm install --save mysql express
+  5.1 cmd: npm install -g cnpm --registry=https://registry.npm.taobao.org
