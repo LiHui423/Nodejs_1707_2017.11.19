@@ -29,6 +29,7 @@
 24. 根据 results.affectedRows 判断执行结果：
 	24.1 注册成功，页面跳转到 index.html
 	24.2 注册失败，页面跳转到 sign-up.html
+25. 处理用户的登录请求：
 
 
 
