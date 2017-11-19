@@ -1,0 +1,5 @@
+﻿1. 创建目录 day9
+2. 创建 sql 文件 db.sql，建库 db_demo 建表 user: id/username/password
+3. day9 目录下执行 cmd: npm init 创建项目的配置文件 package.json
+  3.1 进入 day9 目录，按 shift 键，鼠标右键，选“在此处打开命令窗口”
+  3.2 在 Webstorm 里，按 Alt + F12 进入终端
