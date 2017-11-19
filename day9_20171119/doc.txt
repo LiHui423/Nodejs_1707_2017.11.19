@@ -23,6 +23,13 @@
 18. 安装项目依赖 body-parser，项目目录下 cmd: cnpm install --save body-parser
 19. 修改 index.js，添加 body-parser，app.use(bodyParser.urlencoded());
 20. 取得用户填写的表单信息: req.body.username，req.body.password
+21. 引入 mysql package
+22. 创建数据库连接池 pool = mysql.createPool();
+23. 从连接池中取出一个连接，执行语句 insert...
+24. 根据 results.affectedRows 判断执行结果：
+	24.1 注册成功，页面跳转到 index.html
+	24.2 注册失败，页面跳转到 sign-up.html
+
 
 
 

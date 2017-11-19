@@ -9,6 +9,12 @@
 
 const express = require('express'); // 引入 express 模块
 const bodyParser = require('body-parser'); // 引入 body-parser 模块
+const mysql = require('mysql');
+
+let pool = mysql.createPool({
+    connectionLimit: 10,
+    user: 'root'
+});
 
 let app = express(); // 创建 express 对象
 
@@ -27,7 +33,20 @@ app.get('/sign-up', (req, res) => { // 来自于链接的请求
 app.post('/signUp', (req, res) => { // 接受用户注册请求
     let username = req.body.username;
     let password = req.body.password;
-    res.end(`${username} + ${password}`);
+
+    pool.getConnection((err, connection) => {
+        if(err) throw err;
+        let sql = 'INSERT INTO db_demo.user VALUE(NULL, ?, ?)';
+        connection.query(sql, [username, password], (err, results, fields) => {
+            if(err) throw err;
+            if (results.affectedRows === 1) { // 注册成功
+                res.sendFile(__dirname + '/public/index.html');
+            } else { // 注册失败
+                res.sendFile(__dirname + '/public/sign-up.html');
+            }
+        });
+        connection.release();
+    })
 });
 
 app.listen(80); // 监听 80 端口，80 是 http 协议的默认端口
