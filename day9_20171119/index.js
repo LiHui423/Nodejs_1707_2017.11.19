@@ -60,6 +60,7 @@ app.post('/signUp', (req, res) => { // 接受用户注册请求
 app.post('/signIn', (req, res) => {
     let username = req.body.username;
     let password = req.body.password;
+    console.log(`${username},${password}`);
 
     pool.getConnection((err, connection) => {
         if (err) throw err;
