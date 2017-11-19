@@ -19,6 +19,10 @@
 14. 停止原来的服务，在项目 index.js 所在目录处，执行命令 cmd: supervisor index.js
 15. 用户发出注册请求，<form action="/signUp" method="post">
 16. 修改 index.js 文件，添加对 /signUP 请求的接受 app.post('/signUp', ()=>{});
+17. 处理请求，先取得用户填写的表单信息：用户名和密码
+18. 安装项目依赖 body-parser，项目目录下 cmd: cnpm install --save body-parser
+19. 修改 index.js，添加 body-parser，app.use(bodyParser.urlencoded());
+20. 取得用户填写的表单信息: req.body.username，req.body.password
 
 
 
